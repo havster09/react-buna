@@ -1,0 +1,49 @@
+{
+  "name": "advanced-react",
+  "version": "1.0.0",
+  "description": "Advanced React",
+  "main": "lib/server.js",
+  "repository": "jscomplete/advanced-react",
+  "author": "Samer Buna",
+  "license": "MIT",
+  "scripts": {
+    "dev": "pm2 start lib/server.js --watch --interpreter babel-node",
+    "start": "babel-node lib/server.js",
+    "start:debug": "babel-node %NODE_DEBUG_OPTION% lib/server.js",
+    "webpack": "webpack -wd",
+    "test": "jest --watch"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "env",
+      "stage-2"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "enzyme": "^2.9.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^6.10.3",
+    "jest": "^20.0.4",
+    "prop-types": "^15.5.10",
+    "react-test-renderer": "^15.6.1"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^7.1.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "cross-env": "^5.0.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "pm2": "^2.4.6",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^3.4.1"
+  }
+}
