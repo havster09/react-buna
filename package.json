@@ -7,17 +7,24 @@
   "author": "Samer Buna",
   "license": "MIT",
   "scripts": {
-    "dev": "pm2 start lib/server.js --watch --interpreter babel-node",
+    "dev": "pm2 start lib/server.js --watch --interpreter babel-node --name appDev",
+    "start-prod": "node build/server.js -i max --name appProd",
     "start": "babel-node lib/server.js",
     "start:debug": "babel-node %NODE_DEBUG_OPTION% lib/server.js",
     "webpack": "webpack -wd",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "build-webpack": "webpack -p",
+    "build-node": "babel lib -d build --copy-files"
   },
   "babel": {
     "presets": [
       "react",
-      "env",
-      "stage-2"
+      ["env", {"targets": {"node": "current"}}]
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread"
     ]
   },
   "devDependencies": {

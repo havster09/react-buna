@@ -1,2 +1,7 @@
 node_modules/
 .idea
+public/bundle
+public/vendor.js
+public/app.js
+coverage/
+build/
